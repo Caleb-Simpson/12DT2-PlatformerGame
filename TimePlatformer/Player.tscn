@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://brlik823pc7x2"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_0hrpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh7hu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hs85"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_0hrpy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_uh7hu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.6, 1.6)
+position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_7hs85")
+
+[connection signal="area_entered" from="Area2D" to="." method="_death"]
+[connection signal="area_entered" from="Area2D" to="." method="_coin"]

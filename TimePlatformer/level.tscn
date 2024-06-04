@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://stbflxe18dbf"]
+[gd_scene load_steps=8 format=3 uid="uid://stbflxe18dbf"]
 
 [ext_resource type="PackedScene" uid="uid://cparci8gvvns3" path="res://platform.tscn" id="1_wl1et"]
 [ext_resource type="PackedScene" uid="uid://ceblamh3o5w8n" path="res://coin.tscn" id="2_j5atk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brlik823pc7x2" path="res://Player.tscn" id="3_vh631"]
 [ext_resource type="PackedScene" uid="uid://go4abhqqpvmv" path="res://boundary_floor.tscn" id="4_d6tue"]
 [ext_resource type="PackedScene" uid="uid://can4wdrhmkq3p" path="res://spike.tscn" id="6_wk8i0"]
+[ext_resource type="PackedScene" uid="uid://d3di35523f48m" path="res://door.tscn" id="7_wupyq"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -37,13 +38,6 @@ offset_bottom = 84.0
 text = "\"R\" To Respawn
 "
 
-[node name="Button" type="Button" parent="CanvasLayer"]
-offset_left = 9.0
-offset_top = 10.0
-offset_right = 132.0
-offset_bottom = 41.0
-text = "Settings - \"Esc\""
-
 [node name="Area2D2" parent="." instance=ExtResource("2_j5atk")]
 position = Vector2(569, 126)
 
@@ -51,10 +45,11 @@ position = Vector2(569, 126)
 position = Vector2(136, 202)
 
 [node name="Area2D" parent="." instance=ExtResource("4_d6tue")]
-position = Vector2(127, 457)
+position = Vector2(127, 344)
 scale = Vector2(1.24, 1)
 
 [node name="Area2D3" parent="." instance=ExtResource("6_wk8i0")]
 position = Vector2(440, 182)
 
-[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_settings"]
+[node name="Area2D4" parent="." instance=ExtResource("7_wupyq")]
+position = Vector2(863, 152)

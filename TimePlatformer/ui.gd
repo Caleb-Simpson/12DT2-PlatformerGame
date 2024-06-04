@@ -2,14 +2,7 @@ extends CanvasLayer
 
 @onready var global = get_node("/root/Global")
 
-var coins = 0
-
 @onready var coins_group = get_tree().get_nodes_in_group("coins")
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	for coin in coins_group:
-		coins += 1
 
 func _coin(area):
 	if area.has_meta("coin"):

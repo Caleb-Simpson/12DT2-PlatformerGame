@@ -4,7 +4,7 @@
 size = Vector2(1900, 20)
 
 [node name="Area2D" type="Area2D"]
-metadata/Floor = true
+metadata/floor = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(448, 0)

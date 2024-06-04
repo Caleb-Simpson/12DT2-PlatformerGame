@@ -8,17 +8,12 @@ extends CharacterBody2D
 @export var jump_velocity = -300.0
 
 var coin = 0
-var coins = 0
 var lock = false
 var respawn = false
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-func _ready():
-	for coin in coins_group:
-		coins += 1
 
 func _physics_process(delta):
 	if global.lives <= 0 and Input.is_action_pressed("Respawn"):
@@ -55,6 +50,10 @@ func _death(area):
 		if global.lives <= 0:
 			lock = true
 			hide()
+
+func _win(area):
+	if area.has_meta("door"):
+		get_tree().change_scene_to_file("res://End.tscn")
 
 func _respawn(area):
 	respawn = false

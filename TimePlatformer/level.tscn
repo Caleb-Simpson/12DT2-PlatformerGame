@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brlik823pc7x2" path="res://Player.tscn" id="3_vh631"]
 [ext_resource type="PackedScene" uid="uid://go4abhqqpvmv" path="res://boundary_floor.tscn" id="4_d6tue"]
 [ext_resource type="PackedScene" uid="uid://can4wdrhmkq3p" path="res://spike.tscn" id="6_wk8i0"]
-[ext_resource type="PackedScene" uid="uid://d3di35523f48m" path="res://door.tscn" id="7_wupyq"]
+[ext_resource type="PackedScene" uid="uid://5cgylmdxhu4h" path="res://moving_platform.tscn" id="8_74tvi"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -51,5 +51,5 @@ scale = Vector2(1.24, 1)
 [node name="Area2D3" parent="." instance=ExtResource("6_wk8i0")]
 position = Vector2(440, 182)
 
-[node name="Area2D4" parent="." instance=ExtResource("7_wupyq")]
-position = Vector2(863, 152)
+[node name="StaticBody2D2" parent="." instance=ExtResource("8_74tvi")]
+position = Vector2(1387, 133)

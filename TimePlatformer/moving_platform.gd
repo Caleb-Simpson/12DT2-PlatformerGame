@@ -1,11 +1,18 @@
 extends StaticBody2D
 
+@onready var global = get_node("/root/Global")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	_timer()
+
+func _timer():
+	var timer: Timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.autostart = false
+	timer.wait_time = 3.0
+	timer.timeout.connect(_move)
+	timer.start()
+	
+func _move():
+	hide()

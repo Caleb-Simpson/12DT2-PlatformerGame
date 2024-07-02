@@ -13,12 +13,7 @@ func _process(delta):
 	$Coins.text = ("Coins: " + str(global.coin))
 	$Lives.text = ("Lives: " + str(global.lives))
 	_respawn()
-	if Input.is_action_just_pressed("Settings"):
-		_settings()
 	
-func _settings():
-	get_tree().change_scene_to_file("res://settings.tscn")
-
 func _respawn():
 	$Respawn.hide()
 	if global.lives <= 0:

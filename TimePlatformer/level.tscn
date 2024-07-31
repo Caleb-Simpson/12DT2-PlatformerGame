@@ -35,6 +35,7 @@ offset_top = 5.0
 offset_right = 1143.0
 offset_bottom = 28.0
 text = "Lives: 3"
+metadata/_edit_use_anchors_ = true
 
 [node name="Coins" type="Label" parent="CanvasLayer"]
 offset_left = 1083.0
@@ -42,6 +43,7 @@ offset_top = 27.0
 offset_right = 1144.0
 offset_bottom = 50.0
 text = "Coins: 0"
+metadata/_edit_use_anchors_ = true
 
 [node name="Respawn" type="Label" parent="CanvasLayer"]
 offset_left = 553.0
@@ -50,6 +52,7 @@ offset_right = 675.0
 offset_bottom = 84.0
 text = "\"R\" To Respawn
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D2" parent="." instance=ExtResource("2_j5atk")]
 position = Vector2(569, 126)
@@ -82,9 +85,6 @@ speed_scale = 2.0
 position = Vector2(1379, 113)
 scale = Vector2(0.259882, -0.614648)
 
-[node name="Area2D4" parent="." instance=ExtResource("8_fx4r4")]
-position = Vector2(1562, 57)
-
 [node name="Area2D5" parent="." instance=ExtResource("2_j5atk")]
 position = Vector2(1043, 129)
 
@@ -96,3 +96,6 @@ position = Vector2(989, 171)
 
 [node name="Area2D8" parent="." instance=ExtResource("6_wk8i0")]
 position = Vector2(1122, 161)
+
+[node name="Area2D4" parent="." instance=ExtResource("8_fx4r4")]
+position = Vector2(1483, 55)

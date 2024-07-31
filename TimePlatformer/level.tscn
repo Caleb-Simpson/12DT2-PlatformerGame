@@ -53,6 +53,7 @@ text = "\"R\" To Respawn
 
 [node name="Area2D2" parent="." instance=ExtResource("2_j5atk")]
 position = Vector2(569, 126)
+rotation = 0.154733
 
 [node name="StaticBody2D" parent="." instance=ExtResource("1_wl1et")]
 position = Vector2(136, 202)
@@ -62,7 +63,7 @@ position = Vector2(127, 344)
 scale = Vector2(1.24, 1)
 
 [node name="Area2D3" parent="." instance=ExtResource("6_wk8i0")]
-position = Vector2(440, 182)
+position = Vector2(440, 176)
 
 [node name="Path2D" parent="." instance=ExtResource("8_74tvi")]
 position = Vector2(1054, 228)

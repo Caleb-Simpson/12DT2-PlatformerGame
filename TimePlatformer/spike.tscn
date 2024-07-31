@@ -1,16 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://can4wdrhmkq3p"]
+[gd_scene load_steps=3 format=3 uid="uid://can4wdrhmkq3p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lhp0"]
+[ext_resource type="Texture2D" uid="uid://bpw3iofm275or" path="res://Spike.png" id="1_4i44s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utf20"]
+size = Vector2(24, 18)
 
 [node name="Area2D" type="Area2D"]
 metadata/spike = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-color = Color(0.898039, 0.0352941, 0.176471, 1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4i44s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_7lhp0")
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_utf20")

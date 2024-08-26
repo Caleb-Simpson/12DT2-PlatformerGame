@@ -4,45 +4,57 @@
 [ext_resource type="Texture2D" uid="uid://ctmvunitrok2h" path="res://Player.png" id="2_aj5a8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uh7hu"]
-size = Vector2(39, 56)
+size = Vector2(22, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7hs85"]
-size = Vector2(39, 56)
+size = Vector2(22, 32)
 
 [sub_resource type="Gradient" id="Gradient_d5jes"]
-offsets = PackedFloat32Array(0, 0.823204, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.309392, 0.309392, 0.309392, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_f7102"]
 gradient = SubResource("Gradient_d5jes")
 fill = 1
 fill_from = Vector2(0.529915, 0.5)
-fill_to = Vector2(0.871795, 0.102564)
+fill_to = Vector2(0.961538, 0.0641026)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_0hrpy")
+metadata/vanish = true
+metadata/collect = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 0)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_uh7hu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(13.2022, 1.35772)
 zoom = Vector2(1.6, 1.6)
+limit_left = -11
+limit_right = 1173
+limit_bottom = 654
 position_smoothing_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1.5, 0)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_7hs85")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(10, -9)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_f7102")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.75, 1.75)
 texture = ExtResource("2_aj5a8")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(18, -16)
-texture = SubResource("GradientTexture2D_f7102")
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sprite2D"]
+position = Vector2(10, -9)
+remote_path = NodePath("../../PointLight2D")
+update_rotation = false
+update_scale = false
 
 [connection signal="area_entered" from="Area2D" to="." method="_coin"]
 [connection signal="area_entered" from="Area2D" to="." method="_death"]

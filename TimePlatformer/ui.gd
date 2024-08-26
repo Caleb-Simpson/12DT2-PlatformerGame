@@ -12,9 +12,3 @@ func _coin(area):
 func _process(delta):
 	$Coins.text = ("Coins: " + str(global.coin))
 	$Lives.text = ("Lives: " + str(global.lives))
-	_respawn()
-	
-func _respawn():
-	$Respawn.hide()
-	if global.lives <= 0:
-		$Respawn.show()

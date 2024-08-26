@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc211f62g7pxd"]
+
+[ext_resource type="Script" path="res://disappearing_platform.gd" id="1_yatmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1rbc"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv6o1"]
+size = Vector2(40, 46)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_yatmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v1rbc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Area2D"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_dv6o1")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_disappear"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

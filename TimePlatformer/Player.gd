@@ -38,7 +38,7 @@ func _coin(area):
 		global.coin += 1
 		
 func _death(area):
-	if area.has_meta("spike") or area.has_meta("floor"):
+	if area.has_meta("spike"):
 		if global.lives > 1:
 			get_tree().reload_current_scene()
 			global.lives -= 1

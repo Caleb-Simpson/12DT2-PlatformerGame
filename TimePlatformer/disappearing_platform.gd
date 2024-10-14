@@ -1,18 +1,21 @@
 extends StaticBody2D
 
-
+var time = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_process(false)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	time += 1
+	$Sprite2D.position += Vector2(0, sin(time) *2)
 
-func _disappear(body):
-	if body.has_meta("vanish"):
-		$Timer.start()
+
+func _on_area_2d_body_entered(body):
+	if body.name == 'player':
+		set_process(true)
+		$Timer.start(0.7)
 
 func _on_timer_timeout():
 	queue_free()

@@ -32,6 +32,7 @@ position = Vector2(0, 1)
 scale = Vector2(13.2022, 1.35772)
 zoom = Vector2(1.6, 1.6)
 limit_left = -11
+limit_top = 73
 limit_right = 1173
 limit_bottom = 654
 position_smoothing_enabled = true
@@ -56,6 +57,6 @@ remote_path = NodePath("../../PointLight2D")
 update_rotation = false
 update_scale = false
 
-[connection signal="area_entered" from="Area2D" to="." method="_coin"]
 [connection signal="area_entered" from="Area2D" to="." method="_death"]
 [connection signal="area_entered" from="Area2D" to="." method="_win"]
+[connection signal="area_entered" from="Area2D" to="." method="_coin"]

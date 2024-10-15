@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dc211f62g7pxd"]
 
 [ext_resource type="Script" path="res://disappearing_platform.gd" id="1_yatmu"]
-[ext_resource type="Texture2D" uid="uid://cs10kntwergte" path="res://DisappearingPlatform.png" id="2_u8040"]
+[ext_resource type="Texture2D" uid="uid://vdo7xct38lpg" path="res://DisappearingPlatform.png" id="2_u8040"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idf1n"]
 size = Vector2(32, 15)

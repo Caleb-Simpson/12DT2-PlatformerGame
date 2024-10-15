@@ -10,20 +10,15 @@ extends CharacterBody2D
 var coin = 0
 
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-		# Add the gravity.
 		if not is_on_floor():
 			velocity.y += gravity * delta
 
-		# Handle jump.
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			velocity.y = jump_velocity
 
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction = Input.get_axis("Left", "Right")
 		if direction:
 			velocity.x = direction * speed 
@@ -40,11 +35,11 @@ func _coin(area):
 func _death(area):
 	if area.has_meta("spike"):
 		if global.lives > 1:
-			get_tree().reload_current_scene()
+			get_tree().reload_current_scene.call_deferred()
 			global.lives -= 1
 			global.coin = 0
 		elif global.lives <= 1:
-			get_tree().change_scene_to_file("res://game_over.tscn")
+			get_tree().change_scene_to_file.call_deferred("res://game_over.tscn")
 
 func _win(area):
 	if area.has_meta("door"):

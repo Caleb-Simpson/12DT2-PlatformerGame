@@ -121,7 +121,7 @@ point_count = 2
 position = Vector2(5, 0)
 
 [node name="player" parent="." instance=ExtResource("3_vh631")]
-position = Vector2(44, 605)
+position = Vector2(43, 605)
 speed = 150.0
 jump_velocity = -250.0
 

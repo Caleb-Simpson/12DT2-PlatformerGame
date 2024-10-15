@@ -8,7 +8,7 @@ func _coin(area):
 	if area.has_meta("coin"):
 		global.coin += 1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+
+func _process(_delta):
 	$Coins.text = ("Coins: " + str(global.coin))
 	$Lives.text = ("Lives: " + str(global.lives))

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://brlik823pc7x2"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_0hrpy"]
+[ext_resource type="Texture2D" uid="uid://ctmvunitrok2h" path="res://Assets/Player.png" id="2_aj5a8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uh7hu"]
+size = Vector2(22, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hs85"]
+size = Vector2(22, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_0hrpy")
+metadata/vanish = true
+metadata/collect = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_uh7hu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(13.2022, 1.35772)
+zoom = Vector2(1.6, 1.6)
+limit_left = -11
+limit_top = 176
+limit_right = 1173
+limit_bottom = 654
+position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_7hs85")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_aj5a8")
+
+[connection signal="area_entered" from="Area2D" to="." method="_coin"]
+[connection signal="area_entered" from="Area2D" to="." method="_death"]
+[connection signal="area_entered" from="Area2D" to="." method="_win"]

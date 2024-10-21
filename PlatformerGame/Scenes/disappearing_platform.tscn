@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc211f62g7pxd"]
+
+[ext_resource type="Script" path="res://Scripts/disappearing_platform.gd" id="1_yatmu"]
+[ext_resource type="Texture2D" uid="uid://vdo7xct38lpg" path="res://Assets/DisappearingPlatform.png" id="2_n52bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idf1n"]
+size = Vector2(32, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7xmf"]
+size = Vector2(30, 1)
+
+[node name="disappearing_platform" type="StaticBody2D"]
+script = ExtResource("1_yatmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_idf1n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n52bp")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_w7xmf")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

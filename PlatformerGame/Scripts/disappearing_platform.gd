@@ -16,6 +16,7 @@ func _process(_delta):
 
 # Detects the player, starts the timer and starts the process function
 func _on_area_2d_body_entered(body):
+	# Has the player collided with the platform
 	if body.name == 'player':
 		set_process(true)
 		$Timer.start(0.7)

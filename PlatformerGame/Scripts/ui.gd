@@ -7,6 +7,7 @@ extends CanvasLayer
 
 # Coin counter to update the label
 func _coin(area):
+	# Has the player collided with a coin
 	if area.has_meta("coin"):
 		global.coin += 1
 

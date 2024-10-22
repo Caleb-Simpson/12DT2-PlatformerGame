@@ -5,7 +5,7 @@ extends Control
 
 # Resets lives and coins and changes scene to the level
 func _start():
-	global.lives = 5
+	global.lives = global.MAX_LIVES
 	global.coin = 0
 	get_tree().change_scene_to_file("res://Scenes/level.tscn")
 

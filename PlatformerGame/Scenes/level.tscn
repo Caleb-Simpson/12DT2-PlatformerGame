@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://stbflxe18dbf"]
+[gd_scene load_steps=24 format=3 uid="uid://stbflxe18dbf"]
 
 [ext_resource type="PackedScene" uid="uid://brlik823pc7x2" path="res://Scenes/Player.tscn" id="1_skkbp"]
 [ext_resource type="Texture2D" uid="uid://lvjgnv03rvpn" path="res://Assets/Tilemap.png" id="2_tqohf"]
@@ -93,12 +93,6 @@ _data = {
 }
 point_count = 2
 
-[sub_resource type="Curve2D" id="Curve2D_ro46v"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660)
-}
-point_count = 2
-
 [sub_resource type="Curve2D" id="Curve2D_r77rp"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -2, 0, 0, 0, 0, 0, -2, -404)
@@ -111,11 +105,23 @@ _data = {
 }
 point_count = 2
 
+[sub_resource type="Curve2D" id="Curve2D_ro46v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 660)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_sedgj"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, -232)
+}
+point_count = 2
+
 [node name="Level" type="Node2D"]
 position = Vector2(5, 0)
 
 [node name="player" parent="." instance=ExtResource("1_skkbp")]
-position = Vector2(44, 605)
+position = Vector2(382, 265)
 speed = 150.0
 jump_velocity = -250.0
 
@@ -346,6 +352,50 @@ position = Vector2(217, 277)
 [node name="Spike64" parent="Spikes" instance=ExtResource("4_a5jpe")]
 position = Vector2(233, 277)
 
+[node name="Spike65" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(505, 277)
+
+[node name="Spike66" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(521, 277)
+
+[node name="Spike67" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(537, 277)
+
+[node name="Spike68" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(553, 277)
+
+[node name="Spike69" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(505, 214)
+rotation = -3.14159
+
+[node name="Spike70" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(521, 214)
+rotation = -3.14159
+
+[node name="Spike71" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(537, 214)
+rotation = 3.14159
+
+[node name="Spike72" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(553, 214)
+rotation = 3.14159
+
+[node name="Spike73" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(809, 277)
+
+[node name="Spike74" parent="Spikes" instance=ExtResource("4_a5jpe")]
+visible = false
+position = Vector2(825, 277)
+
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource("5_w3sxu")]
@@ -367,106 +417,130 @@ position = Vector2(1024, 367)
 position = Vector2(586, 374)
 
 [node name="Coin7" parent="Coins" instance=ExtResource("5_w3sxu")]
-position = Vector2(150, 435)
+position = Vector2(150, 426)
 
 [node name="Coin8" parent="Coins" instance=ExtResource("5_w3sxu")]
 position = Vector2(154, 245)
 
-[node name="disappearing_platform" parent="." instance=ExtResource("6_q8sw0")]
+[node name="Coin9" parent="Coins" instance=ExtResource("5_w3sxu")]
+visible = false
+position = Vector2(530, 238)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("5_w3sxu")]
+visible = false
+position = Vector2(973, 253)
+
+[node name="Disappearing_Platforms" type="Node2D" parent="."]
+
+[node name="Disappearing_Platform" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
 position = Vector2(337, 582)
 
-[node name="Path2D" parent="." instance=ExtResource("7_rjdg4")]
+[node name="Disappearing_Platform2" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(369, 582)
+
+[node name="Disappearing_Platform3" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(401, 582)
+
+[node name="Disappearing_Platform4" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(914, 565)
+
+[node name="Disappearing_Platform5" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(609, 406)
+
+[node name="Disappearing_Platform6" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(577, 406)
+
+[node name="Disappearing_Platform7" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(609, 486)
+
+[node name="Disappearing_Platform8" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(577, 486)
+
+[node name="Disappearing_Platform9" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(353, 390)
+
+[node name="Disappearing_Platform10" parent="Disappearing_Platforms" instance=ExtResource("6_q8sw0")]
+position = Vector2(321, 390)
+
+[node name="Moving_Platforms" type="Node2D" parent="."]
+
+[node name="Moving_Platform" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
 position = Vector2(246, 608)
 scale = Vector2(0.5, 0.25)
 curve = SubResource("Curve2D_koj1e")
 loop = false
 speed_scale = 1.2
 
-[node name="Path2D2" parent="." instance=ExtResource("7_rjdg4")]
+[node name="Moving_Platform2" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
 position = Vector2(607, 611)
 scale = Vector2(0.5, 0.243056)
 curve = SubResource("Curve2D_usq8o")
 loop = false
 speed_scale = 1.2
 
-[node name="Path2D3" parent="." instance=ExtResource("7_rjdg4")]
-position = Vector2(697, 504)
+[node name="Moving_Platform3" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
+position = Vector2(697, 587)
+rotation = 3.14159
 scale = Vector2(0.5, 0.25)
 curve = SubResource("Curve2D_pn3ai")
 loop = false
-speed_scale = 1.2
+speed_scale = 1.5
 
-[node name="Path2D4" parent="." instance=ExtResource("7_rjdg4")]
-position = Vector2(828, 504)
+[node name="Moving_Platform4" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
+position = Vector2(829, 580)
+rotation = 3.14159
 scale = Vector2(0.5, 0.25)
 curve = SubResource("Curve2D_1wetk")
 loop = false
-speed_scale = 1.2
+speed_scale = 1.5
 
-[node name="Path2D5" parent="." instance=ExtResource("7_rjdg4")]
+[node name="Moving_Platform6" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
 position = Vector2(1005, 571)
 scale = Vector2(0.5, 0.25)
 curve = SubResource("Curve2D_gond6")
 loop = false
 speed_scale = 1.2
 
-[node name="disappearing_platform2" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(914, 565)
-
-[node name="Path2D6" parent="." instance=ExtResource("7_rjdg4")]
-position = Vector2(1096, 408)
+[node name="Moving_Platform7" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
+position = Vector2(1097, 493)
+rotation = 3.14159
 scale = Vector2(0.5, 0.25)
 curve = SubResource("Curve2D_5pf1q")
 loop = false
-speed_scale = 1.2
+speed_scale = 1.5
 
-[node name="disappearing_platform3" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(609, 406)
-
-[node name="disappearing_platform4" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(609, 486)
-
-[node name="Path2D7" parent="." instance=ExtResource("7_rjdg4")]
+[node name="Moving_Platform8" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
 position = Vector2(441, 481)
 scale = Vector2(0.5, 0.25)
 curve = SubResource("Curve2D_eq2hm")
 loop = false
 speed_scale = 1.2
 
-[node name="Path2D8" parent="." instance=ExtResource("7_rjdg4")]
-position = Vector2(57, 295)
-scale = Vector2(0.5, 0.25)
-curve = SubResource("Curve2D_ro46v")
-loop = false
-speed_scale = 1.25
-
-[node name="disappearing_platform5" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(353, 390)
-
-[node name="Path2D9" parent="." instance=ExtResource("7_rjdg4")]
+[node name="Moving_Platform9" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
 position = Vector2(238, 463)
 scale = Vector2(0.5, 0.25)
 curve = SubResource("Curve2D_r77rp")
 loop = false
 speed_scale = 1.2
 
-[node name="Path2D10" parent="." instance=ExtResource("7_rjdg4")]
-position = Vector2(150, 376)
+[node name="Moving_Platform10" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
+position = Vector2(150, 453)
+rotation = 3.14159
 scale = Vector2(0.5, 0.25)
 curve = SubResource("Curve2D_4wmnr")
 loop = false
 
-[node name="disappearing_platform7" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(369, 582)
+[node name="Moving_Platform11" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
+position = Vector2(57, 452)
+rotation = 3.14159
+scale = Vector2(0.5, 0.25)
+curve = SubResource("Curve2D_ro46v")
+loop = false
+speed_scale = 1.5
 
-[node name="disappearing_platform8" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(401, 582)
-
-[node name="disappearing_platform9" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(577, 406)
-
-[node name="disappearing_platform10" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(577, 486)
-
-[node name="disappearing_platform11" parent="." instance=ExtResource("6_q8sw0")]
-position = Vector2(321, 390)
+[node name="Moving_Platform12" parent="Moving_Platforms" instance=ExtResource("7_rjdg4")]
+visible = false
+position = Vector2(530, 274)
+scale = Vector2(0.5, 0.25)
+curve = SubResource("Curve2D_sedgj")
+loop = false

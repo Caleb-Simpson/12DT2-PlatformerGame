@@ -10,6 +10,7 @@ extends Path2D
 
 # If the path is open it plays the animation and stops the closed function from running
 func _ready():
+	# Is the platform a open path
 	if not loop:
 		animation.play("move")
 		animation.speed_scale = speed_scale

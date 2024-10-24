@@ -37,6 +37,6 @@ shape = SubResource("RectangleShape2D_7hs85")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_aj5a8")
 
-[connection signal="area_entered" from="Area2D" to="." method="_coin"]
 [connection signal="area_entered" from="Area2D" to="." method="_win"]
+[connection signal="area_entered" from="Area2D" to="." method="_coin"]
 [connection signal="area_entered" from="Area2D" to="." method="_death"]
